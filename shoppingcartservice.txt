@@ -1,0 +1,12 @@
+private Double calculateCartTotal(ShoppingCart cart) {
+        // Implement the logic to calculate the total amount
+        // This might involve summing the price*quantity of all items in the cart
+        // for each item in cart, do something like: total += item.getPrice() * item.getQuantity();
+        Double totalPrice=0.0;
+        Map<Long,CartItem> map = cart.getCartItems();
+
+        for (Map.Entry<Long, CartItem> items : map.entrySet()) {
+            totalPrice = totalPrice + (items.getValue().getItem().getPrice() * items.getValue().getQuantity());
+        }
+        return totalPrice;
+    }
